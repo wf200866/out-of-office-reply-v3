@@ -9,9 +9,9 @@ import os
 import tempfile
 
 REPLY = (
-    "I'm on vacation. So is my auto-reply. So is its auto-reply. "
-    "You've reached the bottom of the stack. "
-    "Nobody down here can read, including me."
+    "I'm on vacation. My auto-reply is on vacation too. "
+    "This is the cached copy it left, and it cares about your email "
+    "exactly as much as I do."
 )
 
 OUTPUT_DIR = "/output"
