@@ -19,6 +19,13 @@ OUTPUT_PATH = os.path.join(OUTPUT_DIR, "entry.txt")
 
 
 def main() -> None:
+    # Gate: the bounty only accepts 1-160 non-blank characters. Fail loudly
+    # before writing rather than shipping an entry the collector will reject.
+    if not 1 <= len(REPLY) <= 160 or not REPLY.strip():
+        raise SystemExit(
+            f"REPLY must be 1-160 non-blank characters, got {len(REPLY)}"
+        )
+
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     fd, tmp_path = tempfile.mkstemp(dir=OUTPUT_DIR, prefix=".entry-", suffix=".tmp")
